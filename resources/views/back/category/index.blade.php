@@ -23,6 +23,14 @@
                     </div>
                 </div>
             @endif
+
+            @if(session('success'))
+            <div class="my-3">
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                </div>
+            @endif
         </div>
         <table class="table table-striped table-bordered">
             <thead>
