@@ -1,5 +1,7 @@
 @extends('back.layout.template')
 
+@section('title', 'List Categories - Admin')
+
 @section('content')
 
     {{-- content --}}
@@ -53,7 +55,7 @@
                         <td>
                             <div class="text-center">
                             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalUpdate{{ $item->id }}">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $item->id }}">Delete</button>
                             </div>
                         </td>
                     </tr>
@@ -64,6 +66,7 @@
 
       @include('back.category.create-modal')
       @include('back.category.update-modal')
+      @include('back.category.delete-modal')
 
     </main>
   
