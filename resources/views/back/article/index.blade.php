@@ -17,7 +17,7 @@
 
       <div class="mt-3">
         <div class="mb-3">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Create</button>
+            <a href="{{ url('article/create') }}" class="btn btn-success">Create</a>
             @if ($errors->any())
                 <div class="my-3">
                     <div class="alert alert-danger">
@@ -47,7 +47,7 @@
                     <th>Views</th>
                     <th>Status</th>
                     <th>Publish Date</th>
-                    {{-- <th>Function</th> --}}
+                    <th>Function</th>
                 </tr>
             </thead>
 
@@ -72,8 +72,8 @@
             ajax: '{{ url()->current() }}',
             columns: [
                 {
-                    data: 'id',
-                    name: 'id'
+                    data: 'DT_RowIndex', //bisa di liat di documentation data table server-side 
+                    name: 'DT_RowIndex'
                 },
                 {
                     data: 'category_id',
@@ -94,6 +94,10 @@
                 {
                     data: 'publish_date',
                     name: 'publish_date'
+                },
+                {
+                    data: 'button',
+                    name: 'button'
                 },
             ]
         }
